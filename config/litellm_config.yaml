@@ -27,6 +27,9 @@ litellm_settings:
   num_retries: 2
   request_timeout: 180
 
+  set_verbose: false
+  json_logs: true
+
 
 # ============================================
 # GENERAL
