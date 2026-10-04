@@ -1,5 +1,4 @@
 name: healthcheck
-terms: []
 
 description: LLM policy for health check purposes.
 
