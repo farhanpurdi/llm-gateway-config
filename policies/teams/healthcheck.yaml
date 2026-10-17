@@ -1,0 +1,16 @@
+name: healthcheck
+
+description: LLM policy for health check purposes.
+
+models:
+  - company-fast
+  - company-coding
+
+limits:
+  team:
+    monthly_budget_usd: 100
+    rpm: 60
+    tpm: 200000
+
+  member:
+    monthly_budget_usd: 20

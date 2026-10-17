@@ -1,0 +1,16 @@
+name: engineering
+
+description: LLM policy for engineering and software development teams.
+
+models:
+  - company-fast
+  - company-coding
+
+limits:
+  team:
+    monthly_budget_usd: 100
+    rpm: 60
+    tpm: 200000
+
+  member:
+    monthly_budget_usd: 20

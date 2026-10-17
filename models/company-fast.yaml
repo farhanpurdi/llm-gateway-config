@@ -1,0 +1,33 @@
+name: company-fast
+
+display_name: Company Fast
+
+status: active
+
+description: >
+  Default model for general-purpose workloads
+  where latency, quality, and cost need to be balanced.
+
+recommended_for:
+  - general chat
+  - summarization
+  - document explanation
+  - simple analysis
+  - lightweight coding
+  - developer Q&A
+
+capabilities:
+  chat: true
+  streaming: true
+  coding: true
+
+routing:
+  primary:
+    provider: openai
+    model: gpt-5.6-terra
+
+access:
+  default_enabled: false
+
+ownership:
+  team: ai-platform

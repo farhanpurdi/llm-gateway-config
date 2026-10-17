@@ -1,0 +1,16 @@
+name: pilot
+
+description: LLM policy for final pilot purposes.
+
+models:
+  - company-fast
+  - company-coding
+
+limits:
+  team:
+    monthly_budget_usd: 10
+    rpm: 30
+    tpm: 100000
+
+  member:
+    monthly_budget_usd: 2

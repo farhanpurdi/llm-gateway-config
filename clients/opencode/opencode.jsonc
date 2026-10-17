@@ -1,0 +1,41 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "model": "company-ai/company-coding",
+
+  "providers": {
+    "company-ai": {
+      "name": "Company AI Gateway",
+
+      "env": ["COMPANY_LLM_API_KEY"],
+
+      "package": "@opencode/ai/providers/openai-compatible",
+
+      "settings": {
+        "baseURL": "http://localhost:4000/v1"
+      },
+
+      "models": {
+        "company-fast": {
+          "name": "Company Fast",
+          "modelID": "company-fast",
+          "capabilities": {
+            "tools": true,
+            "input": ["text"],
+            "output": ["text"]
+          }
+        },
+
+        "company-coding": {
+          "name": "Company Coding",
+          "modelID": "company-coding",
+          "capabilities": {
+            "tools": true,
+            "input": ["text"],
+            "output": ["text"]
+          }
+        }
+      }
+    }
+  }
+}

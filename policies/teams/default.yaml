@@ -1,0 +1,15 @@
+name: default
+
+description: Default policy for internal LLM users.
+
+models:
+  - company-fast
+
+limits:
+  team:
+    monthly_budget_usd: 10
+    rpm: 30
+    tpm: 100000
+
+  member:
+    monthly_budget_usd: 2
