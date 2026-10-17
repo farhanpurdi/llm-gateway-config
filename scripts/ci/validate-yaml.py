@@ -35,6 +35,8 @@ print(
 
 
 for path in yaml_files:
+    if not path.is_file():
+        fail(f"expected YAML file, found directory: {path}")
     print(f"Checking: {path}")
 
     try:

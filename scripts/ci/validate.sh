@@ -20,7 +20,7 @@ echo "LLM Gateway Config Validation"
 echo "======================================"
 
 echo
-echo "[1/6] Required repository structure"
+echo "[1/7] Required repository structure"
 
 required_files=(
   "config/litellm_config.yaml"
@@ -28,7 +28,7 @@ required_files=(
   "models/company-coding.yaml"
   "providers/openai.yaml"
   "clients/opencode/opencode.jsonc"
-  "docs/model-catalog.md"
+  "README.md"
 )
 
 for file in "${required_files[@]}"; do
@@ -47,35 +47,40 @@ echo "Repository structure: PASS"
 
 
 echo
-echo "[2/6] YAML syntax"
+echo "[2/7] YAML syntax"
 
 python3 \
   scripts/ci/validate-yaml.py
 
 
 echo
-echo "[3/6] Logical model catalog"
+echo "[3/7] Logical model catalog and provider consistency"
 
 python3 \
   scripts/ci/validate-model-catalog.py
 
 
 echo
-echo "[4/6] LiteLLM runtime config"
+echo "[4/7] LiteLLM runtime contract"
 
 python3 \
   scripts/ci/validate-runtime-config.py
 
 
 echo
-echo "[5/6] Team policies"
+echo "[5/7] Team policies"
 
 python3 \
   scripts/ci/validate-policies.py
 
 
 echo
-echo "[6/6] Git safety"
+echo "[6/7] Offline contract regression tests"
+
+python3 scripts/ci/test-model-contract.py
+
+echo
+echo "[7/7] Git safety"
 
 if git ls-files \
   | grep -qE '(^|/)\.env$'; then
